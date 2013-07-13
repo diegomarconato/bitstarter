@@ -5,7 +5,7 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
  fs.readFile('index.html', 'utf8', function(err, data) {
-
+ response.writeHead(200, {'Content-Type': 'text/plain'});
                 if (err){
                 response.send('Could not find or open file for reading\n');
                 }
