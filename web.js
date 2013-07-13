@@ -7,7 +7,7 @@ app.get('/', function(request, response) {
  fs.readFile('index.html', 'utf8', function(err, data) {
 
                 if (err){
-                response.write('Could not find or open file for reading\n');
+                response.send('Could not find or open file for reading\n');
                 }
                 else{
                 var buffer = new Buffer(data, 'utf-8');
